@@ -118,6 +118,10 @@ function Battle({dataArr, favorites}) {
             alert(`You lost! ${cpuPokeName} is stronger than ${playerPokeName}.`)
             setCpuScore(cpuScore + 1)
             setPlayerPoke([])
+        } if (cpuAtkAvg === playerAtkAvg) {
+            alert('What are the odds? Both Pokemon were knocked out!')
+            setPlayerPoke([])
+            setCpu([])
         }
     }
 

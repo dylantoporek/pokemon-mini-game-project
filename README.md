@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+Welcome to the Poke Olympics!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Acting as the top level, App intiates with a useEffect fetching all the Pokemon data from the PokeAPI, as well as fetching any saved favorties from the local db.json server. 
 
-## Available Scripts
+There are four routes being displayed in this Pokemon minigame app:
+    -Home
+    -Track
+    -Battle
+    -Favorites
 
-In the project directory, you can run:
+Home acts as a PokeDex (search database) to review the stats of some of your favorite Pokemon. You can also choose to favorite whichever Pokemon you select, which in turn adds them to the favorites list. This process involves a fetch post request to the local db.json server.
 
-### `npm start`
+Track is a stand alone minigame in which you choose a Pokemon to race for you, and then generate four opponents to race against. There must be five entries to begin any given race. An alert will prompt you to populate more racers if you have not done so already.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Battle is a second stand alone minigame. Battle is a first-to-five contest in which there are two checks to determine a winner. First, if one Pokemon has a type that is super-effective agaisnt the other, it will win the round automatically. If a winner cannot be determined by type, the average of their attack and special attack stats is taken and compared. Whichever Pokemon has the higher attack average will win the round. If there are not two entries for the battle, trying to initiate it will result in an alert instructing you to generate a Pokemon for both you and the CPU.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Favorites acts at the display for any Pokemon you choose to favorite. There will be a simple card display for each Pokemon favorited. There is a delete button attached to each card as well, this will effectively remove that card from the favorites list. This process involves a fetch delete request to the local db.json.
