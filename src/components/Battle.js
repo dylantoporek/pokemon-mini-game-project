@@ -3,7 +3,7 @@ import BattleForm from "./BattleForm";
 import BattleItem from "./BattleItem";
 import arena from '../images/arena.png'
 
-function Battle({dataArr}) {
+function Battle({dataArr, favorites}) {
     const [ani, setAni] = useState(false)
     const [playerPoke, setPlayerPoke] = useState([])
     const [cpu, setCpu] = useState([])
@@ -158,7 +158,8 @@ function Battle({dataArr}) {
                 {cpuScore}
             </div>
            
-            <BattleForm 
+            <BattleForm
+                favorites={favorites}
                 dataArr={dataArr} 
                 playerPokeSearch={playerPokeSearch} 
                 getOpponent={getOpponent}

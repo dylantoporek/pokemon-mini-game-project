@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function BattleForm({dataArr, playerPokeSearch, getOpponent}){
+function BattleForm({dataArr, playerPokeSearch, getOpponent, favorites}){
     const[pokeName, setPokeName] = useState("")
 
     function handleSubmit(e){
@@ -22,6 +22,18 @@ function BattleForm({dataArr, playerPokeSearch, getOpponent}){
 
     function randomPlayerPoke(){
         playerPokeSearch([dataArr[Math.floor(Math.random()*898)]])
+    }
+
+    function randomFav(){
+        if(favorites.length > 0){
+            let randomFav = favorites[Math.floor(Math.random() * (favorites.length))]
+            let findRandomFav = dataArr.filter((poke) => {
+                return poke.name === randomFav.name
+            })
+            playerPokeSearch([findRandomFav[0]])
+        } else {
+            alert('You must have at least one favorite to use this button!')
+        }
     }
 
     return (
@@ -49,9 +61,16 @@ function BattleForm({dataArr, playerPokeSearch, getOpponent}){
             <button style={{
                 position: 'relative',
                 top: 20,
-                left: 240,
+                left: 37,
                 borderRadius: '20%',
             }} onClick={randomPlayerPoke}>Random Pokemon</button>
+
+            <button style={{
+                position: 'relative',
+                top: 20,
+                left: 137,
+                borderRadius: '20%',
+            }} onClick={randomFav}>Random Favorite</button>
 
         </div>
     )

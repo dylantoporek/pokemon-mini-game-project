@@ -10,7 +10,7 @@ function PokeDexList({dataArr, filter, newFavorite}) {
     })}
 
     const pokeFilter = () => dataArr.filter((poke) => {
-        return poke.name.toLowerCase().includes(filter.toLowerCase())
+        return poke.name.toLowerCase().startsWith(filter.toLowerCase())
      })
 
     return (

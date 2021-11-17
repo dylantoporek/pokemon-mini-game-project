@@ -58,8 +58,8 @@ function App() {
       }}>
       <NavBar />
       <Routes>
-        <Route path="/track" element={<Race dataArr={dataArr}/>}></Route>
-        <Route path="/arena" element={<Battle dataArr={dataArr} />}></Route>
+        <Route path="/track" element={<Race dataArr={dataArr} favorites={favorites}/>}></Route>
+        <Route path="/arena" element={<Battle dataArr={dataArr} favorites={favorites} />}></Route>
         <Route path='/favorites' element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}></Route>
         <Route exact path="/" element={<Home dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}></Route>
         </Routes>

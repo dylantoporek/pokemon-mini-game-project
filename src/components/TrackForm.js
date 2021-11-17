@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOpponent3, getOpponent4}) {
+function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOpponent3, getOpponent4, favorites}) {
     const[pokeName, setPokeName] = useState("")
 
     function handleSubmit(e){
@@ -27,6 +27,18 @@ function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOp
         playerPokeSearch([dataArr[Math.floor(Math.random()*898)]])
     }
 
+    function randomFavPoke(){
+        if(favorites.length > 0){
+            let randomFav = favorites[Math.floor(Math.random() * (favorites.length))]
+            let findRandomFav = dataArr.filter((poke) => {
+                return poke.name === randomFav.name
+            })
+            playerPokeSearch([findRandomFav[0]])
+        } else {
+            alert('You must have at least one favorite to use this button!')
+        }  
+    }
+
     return (
         <div>
             <form style={{
@@ -49,9 +61,15 @@ function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOp
             <button style={{
                 position: 'relative',
                 top: 20,
-                left: 200,
+                left: 0,
                 borderRadius: '20%',
             }} onClick={randomPlayerPoke}>Random Pokemon</button>
+            <button style={{
+               position: 'relative',
+               top: 20,
+               left: 100,
+               borderRadius: '20%', 
+            }} onClick={randomFavPoke}>Random Favorite</button>
         </div>
     )
 }
