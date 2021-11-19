@@ -14,18 +14,7 @@ function PokeDexList({dataArr, filter, newFavorite}) {
      })
 
     return (
-        <div style={{
-            backgroundColor: "#3b4cca",
-            position: "relative",
-            top: 20,
-            paddingLeft: 15,
-            paddingTop: 10,
-            display: "flex",
-            flexWrap: "wrap",
-            height: 600,
-            width: "100%",
-            overflow: "auto"
-            }}>
+        <div id='listcontainer'>
             {pokeDisplay()}
         </div>
     )
