@@ -30,7 +30,6 @@ function App() {
   
   
   function handleDeleteItem(deletedItem){
-    console.log(deletedItem)
     const updatedFavs = favorites.filter((fav) => fav.id !== deletedItem.id);
     setFavorites(updatedFavs);
 
@@ -38,7 +37,7 @@ function App() {
       method: 'DELETE',
     })
     .then((res) => res.json())
-    .then(console.log)
+    .then(console.log('Item Deleted'))
   }
 
   
@@ -51,27 +50,17 @@ function App() {
   }
 
   if (dataArr.length > 300){
-    return <div style={{
-      position: "fixed",
-      right: 0,
-      left: 0,
-      }}>
+    return <div id='app'>
       <NavBar />
       <Routes>
         <Route path="/track" element={<Race dataArr={dataArr} favorites={favorites}/>}></Route>
         <Route path="/arena" element={<Battle dataArr={dataArr} favorites={favorites} />}></Route>
         <Route path='/favorites' element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}></Route>
         <Route exact path="/" element={<Home dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}></Route>
-        </Routes>
+      </Routes>
     </div>
   } else {
-  return <div style={{
-    position: "absolute",
-    display: "flex",
-    top: 225,
-    left: 500,
-    fontSize: 50,
-    }}>
+  return <div id='loading'>
     <h3>Loading</h3>
     <img src={shift}/>
     </div>

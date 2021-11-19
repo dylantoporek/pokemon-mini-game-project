@@ -7,10 +7,12 @@ function PokeDexForm({filterDisplay, filter}){
     }
     return (
         <div>
-            <input style={{
-                position: 'relative',
-                marginLeft: 15
-            }} type="text" placeholder="Search PokeDex" value={filter} onChange={handleChange}></input>
+            <input id='pokedexsearch'
+                type="text" 
+                placeholder="Search PokeDex" 
+                value={filter} 
+                onChange={handleChange}>
+            </input>
         </div>
     )
 }
