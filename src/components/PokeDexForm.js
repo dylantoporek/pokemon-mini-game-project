@@ -7,7 +7,7 @@ function PokeDexForm({filterDisplay, filter}){
     }
     return (
         <div>
-            <input id='pokedexsearch'
+            <input id='pokedex-search'
                 type="text" 
                 placeholder="Search PokeDex" 
                 value={filter} 

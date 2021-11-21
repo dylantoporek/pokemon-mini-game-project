@@ -90,27 +90,11 @@ function Race({dataArr, favorites}) {
                 getOpponent3={getOpponent3} 
                 getOpponent4={getOpponent4} 
             />
-            <button style={{
-                backgroundColor: 'black',
-                WebkitTextFillColor: 'white',
-                fontFamily: 'avenirnext-heavy',
-                fontSize: 25,
-                position: 'relative',
-                height: 50,
-                width: 100,
-                left: 670,
-                top: -30,
-                borderRadius: '20%',
-            }} onClick={startRace}>Race!</button>
-            <div style={{
-                position:'relative',
-                height: 500,
-                backgroundImage: `url('${track}')`,
-                }}>
-                <div style={{
-                    position: 'relative',
-                    top: -10
-                    }}>
+            <button id='race' onClick={startRace}>
+                Race!
+            </button>
+            <div id='track-background' style={{backgroundImage: `url('${track}')`}}>
+                <div id='racers'>
                     {playerDisplay}
                     {opponentsDisplay}
                 </div>

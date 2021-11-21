@@ -9,17 +9,17 @@ import './App.css';
 function NavBar() {
     return (
         <div id='nav'>
-            <NavLink id='linkPokedex' to="/">
-                PokeDex <img id='pokedexlogo' src={pokedexlogo}/>
+            <NavLink id='link-pokedex' to="/">
+                PokeDex <img id='pokedex-logo' src={pokedexlogo}/>
             </NavLink>
-            <NavLink id='linkTrack' to="/track">
-                Track <img id='tracklogo' src={tracklogo2}/>
+            <NavLink id='link-track' to="/track">
+                Track <img id='track-logo' src={tracklogo2}/>
             </NavLink>
-            <NavLink id='linkArena' to="/arena">
-                Arena <img id='arenalogo' src={battlelogo}/>
+            <NavLink id='link-arena' to="/arena">
+                Arena <img id='arena-logo' src={battlelogo}/>
             </NavLink>
-            <NavLink id='linkFav' to="/favorites">
-                Favorites <img id='favlogo' src={favlogo}/>
+            <NavLink id='link-fav' to="/favorites">
+                Favorites <img id='fav-logo' src={favlogo}/>
             </NavLink>
         </div>
     )

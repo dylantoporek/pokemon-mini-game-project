@@ -27,7 +27,7 @@
   background-color: #FF0000;
 }
 
-#linkPokedex{
+#link-pokedex{
   position: relative;
   left: 20px;
   top: -60px;
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 
-#pokedexlogo{
+#pokedex-logo{
   position: relative;
   max-height: 70px;
   max-width: 70px;
@@ -47,7 +47,7 @@
   left: -10px;
 }
 
-#linkTrack {
+#link-track {
   position: relative;
   left: 20px;
   margin-right: 80px;
@@ -59,7 +59,7 @@
   text-decoration: none
 }
 
-#tracklogo{
+#track-logo{
   position: relative;
   height: 95px;
   width: 160px;
@@ -67,7 +67,7 @@
   left: -50px;
 }
 
-#linkArena{
+#link-arena{
   position: relative;
   left: -70px;
   margin-right: 120px;
@@ -79,7 +79,7 @@
   text-decoration: none;
 }
 
-#arenalogo{
+#arena-logo{
   position: relative;
   height: 60px;
   width: 100px;
@@ -87,7 +87,7 @@
   left: -10px;
 }
 
-#linkFav{
+#link-fav{
   position: relative;
   left: -115px;
   top: -60px;
@@ -99,7 +99,7 @@
   text-decoration: none;
 }
 
-#favlogo{
+#fav-logo{
   position: relative;
   height: 45px;
   width: 70px;
@@ -109,12 +109,12 @@
 
 /*//////////////////////////////////// HOME COMPONENT///////////////////////////// */
 
-#pokedexsearch{
+#pokedex-search{
   position: relative;
   margin-left: 15px;
 }
 
-#listcontainer{
+#list-container{
   background-color: #3b4cca;
   position: relative;
   top: 20px;
@@ -211,6 +211,63 @@
   text-align: center;
   font-size: 12px;
 }
+/*///////////////////////////// RACE COMPONENT /////////////////////////////////////*/
+
+#race {
+  background-color: black;
+  -webkit-text-fill-color: white;
+  font-family: avenirnext-heavy;
+  font-size: 25px;
+  position: relative;
+  height: 50px;
+  width: 100px;
+  left: 670px;
+  top: -30px;
+  border-radius: 20%;
+}
+
+#track-background {
+  position: relative;
+  height: 500px;
+}
+
+#racers {
+  position: relative;
+  top: -10px;
+}
+
+#track-searchbar {
+  position: relative;
+  margin-left: 15px;
+}
+
+#track-submit {
+  border-radius: 20%;
+}
+
+#opponents {
+  position: relative;
+  top: 20px;
+  left: 1000px;
+  border-radius: 20%;
+}
+
+#random-poke {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  border-radius: 20%;
+}
+
+#random-fav {
+  position: relative;
+  top: 20px;
+  left: 100px;
+  border-radius: 20%;
+}
+
+/* /////////////////////////////////BATTLE COMPONENT///////////////////////////////// */
+
 @keyframes sprint {
   from {
     trasform: translateX(0%);

@@ -14,7 +14,7 @@ function PokeDexList({dataArr, filter, newFavorite}) {
      })
 
     return (
-        <div id='listcontainer'>
+        <div id='list-container'>
             {pokeDisplay()}
         </div>
     )
