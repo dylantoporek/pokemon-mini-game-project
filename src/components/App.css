@@ -1,4 +1,4 @@
-/* ////////////////////////////////APP COMPONENT//////////////////// */
+/* ///////////////////////////////////////////////APP COMPONENT/////////////////////////////////////////// */
 #app {
   position: fixed;
     top: 0;
@@ -15,7 +15,8 @@
   font-size: 50px;
 }
 
-/*//////////////////////////////// NAVBAR COMPONENT//////////////////////// */
+/*//////////////////////////////////////////// NAVBAR COMPONENT////////////////////////////////////////// */
+
 #nav{
   position: relative;
   border-bottom: 2px solid black;
@@ -107,7 +108,7 @@
   left: -10px;
 }
 
-/*//////////////////////////////////// HOME COMPONENT///////////////////////////// */
+/*//////////////////////////////////////////////// HOME COMPONENT//////////////////////////////////////////// */
 
 #pokedex-search{
   position: relative;
@@ -211,7 +212,7 @@
   text-align: center;
   font-size: 12px;
 }
-/*///////////////////////////// RACE COMPONENT /////////////////////////////////////*/
+/*////////////////////////////////////////////////// RACE COMPONENT /////////////////////////////////////////////*/
 
 #race {
   background-color: black;
@@ -281,7 +282,7 @@
   }
 }
 
-/* ////////////////////////////////////////BATTLE COMPONENT/////////////////////////////////////// */
+/* ///////////////////////////////////////////////BATTLE COMPONENT////////////////////////////////////////// */
 
 #player-score{
   position: absolute;
@@ -394,4 +395,77 @@
 
 /* ///////////////////////////////////////FAVORITES COMPONENT////////////////////////////////////////////// */
 
+#fav-container{
+  background-color: white;
+  border-style: solid;
+  border-color: #ffcb05;
+  border-width: 6px;
+  border-radius: 5px;
+  width: 150px;
+  height: 215px;
+  margin: 10px;
+}
 
+#fav-name{
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+#poke-fav-img{
+  position: relative;
+  max-width: 120%;
+  max-height: 120%;
+  top: 10px;
+  z-index: 99;
+}
+
+#img-base{
+  position: relative;
+  background-color: #3d7dca;
+  border-radius: 100%;
+  width: 100px;
+  height: 40px;
+  z-index: 88;
+  left: 25px;
+  top: -40px;
+}
+
+#delete-fav{
+  position: relative;
+  top: 0px;
+}
+
+#favorites-page-title-container{
+  position: relative;
+  left: 120px;
+  top: 10px;
+  width: 95%;
+  height: 100%;
+  text-align: center;
+}
+
+#fav-title-display{
+  position: relative;
+  border-style: solid;
+  width: 150px;
+  height: 50px;
+  left: 522px;
+  font-family: avenirnext-heavy;
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+#fav-title{
+  position: relative;
+  top: -16px;
+}
+
+#fav-poke-display{
+  position: relative;
+  top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 100%;
+  overflow: auto;
+}

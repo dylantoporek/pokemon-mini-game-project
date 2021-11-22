@@ -1,9 +1,3 @@
 {
-  "fav": [
-    {
-      "name": "squirtle",
-      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "id": 1
-    }
-  ]
+  "fav": []
 }
