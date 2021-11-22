@@ -129,36 +129,12 @@ function Battle({dataArr, favorites}) {
 
     return (
         <div>
-            <div style={{
-                position: 'absolute',
-                left: 560,
-                paddingTop: 10,
-                width:75,
-                height: 50,
-                fontSize: 30,
-                borderStyle: "solid",
-                borderWidth: 5,
-                textAlign: 'center',
-                zIndex: 99,
-                top: 225,
-                backgroundColor: 'white'
-                }}>
+
+            <div id='player-score'>
                 {playerScore}
             </div>
-            <div style={{
-                position: 'absolute',
-                left: 810,
-                paddingTop: 10,
-                width:75,
-                height: 50,
-                fontSize: 30,
-                borderStyle: "solid",
-                borderWidth: 5,
-                textAlign: 'center',
-                zIndex: 99,
-                top: 225,
-                backgroundColor: 'white'
-                }}>
+
+            <div id='cpu-score'>
                 {cpuScore}
             </div>
            
@@ -169,51 +145,20 @@ function Battle({dataArr, favorites}) {
                 getOpponent={getOpponent}
             />
             
-            <button style={{
-                position: 'relative',
-                height: 50,
-                width: 100,
-                top: -30,
-                left: 670,
-                borderRadius: '20%',
-                zIndex: 99,
-                backgroundColor: 'black',
-                WebkitTextFillColor: 'white',
-                fontFamily: "avenirnext-heavy",
-                fontSize: 25
-            }} onClick={calculateWinner}>Battle!</button>
+            <button id='battle' onClick={calculateWinner}>
+                Battle!
+            </button>
 
-            <div style={{
-                position: 'relative',
-                top: 150,
-                left: 220,
-                width: 1000,
-                height: 500,
-                backgroundImage: `url('${arena}')`
-                }}>
-                <div style={{
-                    position: 'absolute',
-                    transform: "scaleX(-1)",
-                    top: 80,
-                    width: 200,
-                    height: 200,
-                    left: 160,
-                    textAlign: 'center',
-                    zIndex: 99
-                    }}>
+            <div id='arena-container' style={{backgroundImage: `url('${arena}')`}}>
+                
+                <div id='player-poke'>
                     {playerDisplay}
                 </div>
-                <div style={{
-                    position: 'absolute',
-                    top: 80,
-                    width: 200,
-                    height: 200,
-                    left: 640,
-                    textAlign: 'center',
-                    zIndex: 99
-                    }}>
+
+                <div id='cpu-poke'>
                     {cpuDisplay}
                 </div>
+                
             </div>
         </div>
     )

@@ -42,8 +42,7 @@ function PokeDexItem({poke, newFavorite}) {
         return(
             <div id='details-container'>
                 <div id='details-card'>
-                    <button id='hide-details' 
-                        onClick={hideDetails}>
+                    <button id='hide-details' onClick={hideDetails}>
                         Close card
                     </button>
                     <img id='details-image' src={poke.sprites.other['official-artwork'].front_default}/>

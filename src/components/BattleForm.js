@@ -16,7 +16,7 @@ function BattleForm({dataArr, playerPokeSearch, getOpponent, favorites}){
         setPokeName(event.target.value)
     }
 
-    function handleClick(event){
+    function handleClick(){
         getOpponent([dataArr[Math.floor(Math.random()*898)]])
     }
 
@@ -39,38 +39,29 @@ function BattleForm({dataArr, playerPokeSearch, getOpponent, favorites}){
     return (
         <div>
 
-            <form style={{
-                position: 'relative',
-                marginLeft: 15
-                }} id="form" onSubmit={handleSubmit}>
+            <form id='battle-searchbar' onSubmit={handleSubmit}>
                 <label>
-                    <input type="text" placeholder="choose your pokemon" value={pokeName} onChange={handleChange} />
+                    <input 
+                        type="text" 
+                        placeholder="choose your pokemon" 
+                        value={pokeName} 
+                        onChange={handleChange} 
+                    />
                 </label>
-                <input style={{
-                    borderRadius: '20%',
-                }} type="submit" value="Search"/>
+                <input id='battle-searchbar-submit' type="submit" value="Search"/>
             </form>
 
-            <button style={{
-                position: 'relative',
-                top: 20,
-                left: 1000,
-                borderRadius: '20%',
-            }} onClick={handleClick}>Generate CPU</button>
+            <button id='random-cpu' onClick={handleClick}>
+                Generate CPU
+            </button>
 
-            <button style={{
-                position: 'relative',
-                top: 20,
-                left: 37,
-                borderRadius: '20%',
-            }} onClick={randomPlayerPoke}>Random Pokemon</button>
+            <button id='random-player' onClick={randomPlayerPoke}>
+                Random Pokemon
+            </button>
 
-            <button style={{
-                position: 'relative',
-                top: 20,
-                left: 137,
-                borderRadius: '20%',
-            }} onClick={randomFav}>Random Favorite</button>
+            <button id='random-fav' onClick={randomFav}>
+                Random Favorite
+            </button>
 
         </div>
     )

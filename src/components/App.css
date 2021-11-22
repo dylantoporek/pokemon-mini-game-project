@@ -266,7 +266,11 @@
   border-radius: 20%;
 }
 
-/* /////////////////////////////////BATTLE COMPONENT///////////////////////////////// */
+#poke-track-display{
+  transform: scaleX(-1);
+  position: relative;
+  z-index: 1000;
+}
 
 @keyframes sprint {
   from {
@@ -277,6 +281,117 @@
   }
 }
 
+/* ////////////////////////////////////////BATTLE COMPONENT/////////////////////////////////////// */
 
+#player-score{
+  position: absolute;
+  left: 560px;
+  padding-top: 10px;
+  width: 75px;
+  height: 50px;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 5px;
+  text-align: center;
+  z-index: 99;
+  top: 225px;
+  background-color: white;
+}
+
+#cpu-score{
+  position: absolute;
+  left: 810px;
+  padding-top: 10px;
+  width: 75px;
+  height: 50px;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 5px;
+  text-align: center;
+  z-index: 99;
+  top: 225px;
+  background-color: white;
+}
+
+#battle{
+  position: relative;
+  height: 50px;
+  width: 100px;
+  top: -30px;
+  left: 670px;
+  border-radius: 20%;
+  z-index: 99;
+  background-color: black;
+  -webkit-text-fill-color: white;
+  font-family: avenirnext-heavy;
+  font-size: 25px;
+}
+
+#arena-container{
+  position: relative;
+  top: 150px;
+  left: 220px;
+  width: 1000px;
+  height: 500px;
+}
+
+#player-poke{
+  position: absolute;
+  transform: scaleX(-1);
+  top: 80px;
+  width: 200px;
+  height: 200px;
+  left: 160px;
+  text-align: center;
+  z-index: 99;
+}
+
+#cpu-poke{
+  position: absolute;
+  top: 80px;
+  width: 200px;
+  height: 200px;
+  left: 640px;
+  text-align: center;
+  z-index: 99;
+}
+
+#battle-searchbar{
+  position: relative;
+  margin-left: 15px;
+}
+
+#battle-searchbar-submit{
+  border-radius: 20%;
+}
+
+#random-cpu{
+  position: relative;
+  top: 20px;
+  left: 1000px;
+  border-radius: 20%;
+}
+
+#random-player{
+  position: relative;
+  top: 20px;
+  left: 37px;
+  border-radius: 20%;
+}
+
+#random-fav{
+  position: relative;
+  top: 20px;
+  left: 137px;
+  border-radius: 20%;
+}
+
+#poke-battle-display{
+  width: 75%;
+  height: 75%;
+}
+
+
+/* ///////////////////////////////////////FAVORITES COMPONENT////////////////////////////////////////////// */
 
 

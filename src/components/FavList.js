@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 function FavList({favorites, onDeleteItem}) {
 
     const favDisplay = () => favorites.map((fav) => {
-        return <div style={{
+        return <div id='fav-container' style={{
             backgroundColor: 'white',
             borderStyle: 'solid',
             borderColor: '#ffcb05',

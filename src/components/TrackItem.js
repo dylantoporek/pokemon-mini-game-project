@@ -9,11 +9,7 @@ function TrackItem({poke, ani}){
         <div style={{
             animation: ani ? `sprint ${speedFinder()}s forwards` : "",
             }}>
-            <img style={{
-                transform: "scaleX(-1)",
-                position: 'relative',
-                zIndex: 10000000
-            }} src={poke.sprites.front_default} alt="" />
+            <img id='poke-track-display' src={poke.sprites.front_default} alt="" />
         </div>
     )
 }
