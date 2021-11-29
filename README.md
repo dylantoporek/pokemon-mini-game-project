@@ -1,17 +1,19 @@
-Welcome to the Poke Olympics!
+# Pokemon Minigame App
 
-Acting as the top level, App intiates with a useEffect fetching all the Pokemon data from the PokeAPI, as well as fetching any saved favorties from the local db.json server. 
+Welcome to my Pokemon Minigame app. Within this app there are two minigames, a pokedex search page, and a favorties page.
 
-There are four routes being displayed in this Pokemon minigame app:
-    -Home
-    -Track
-    -Battle
-    -Favorites
+# PokeDex
 
-Home acts as a PokeDex (search database) to review the stats of some of your favorite Pokemon. You can also choose to favorite whichever Pokemon you select, which in turn adds them to the favorites list. This process involves a fetch post request to the local db.json server.
+The Pokedex page serves as a way to favortie Pokemon. In addition, you can use it to compare or look up the base stats or types of any Pokemon of your choosing.
 
-Track is a stand alone minigame in which you choose a Pokemon to race for you, and then generate four opponents to race against. There must be five entries to begin any given race. An alert will prompt you to populate more racers if you have not done so already.
+# Track
 
-Battle is a second stand alone minigame. Battle is a first-to-five contest in which there are two checks to determine a winner. First, if one Pokemon has a type that is super-effective agaisnt the other, it will win the round automatically. If a winner cannot be determined by type, the average of their attack and special attack stats is taken and compared. Whichever Pokemon has the higher attack average will win the round. If there are not two entries for the battle, trying to initiate it will result in an alert instructing you to generate a Pokemon for both you and the CPU.
+The Track page contains the speed minigame. This minigame will use the speed stat of each Pokemon to determine the winner of the race. You can either choose a Pokemon via a search bar, have a random Pokemon generated for you, or you can use a random Pokemon from your favorites list.
 
-Favorites acts at the display for any Pokemon you choose to favorite. There will be a simple card display for each Pokemon favorited. There is a delete button attached to each card as well, this will effectively remove that card from the favorites list. This process involves a fetch delete request to the local db.json.
+# Battle
+
+The Arena page contains the strength minigame. This minigame will use a series of checks to determine the winner of the battle. First, if your Pokemon's type is super-effective against your opponet (and vice versa) you will win or lose accordingly. If neither type is super- effective, the average of both the attack and special attack stats will be compared for the two Pokemon, the larger attack average will be the winner You can either choose a Pokemon via a search bar, have a random Pokemon generated for you, or you can use a random Pokemon from your favorites list.
+
+# Favorties
+
+The Favorites page contians a display card for each Pokemon you have favorited along with a button to delete them from the favorites page.
