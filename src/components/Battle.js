@@ -4,7 +4,6 @@ import BattleItem from "./BattleItem";
 import arena from '../images/arena.png'
 
 function Battle({dataArr, favorites}) {
-    const [ani, setAni] = useState(false)
     const [playerPoke, setPlayerPoke] = useState([])
     const [cpu, setCpu] = useState([])
     const [playerScore, setPlayerScore] = useState(0)
