@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import PokeDexList from "./PokeDexList";
 import PokeDexForm from "./PokeDexForm";
 
-function Home({dataArr, setFavorites, favorites}) {
+function PokeDex({dataArr, setFavorites, favorites}) {
     const [filter, setFilter] = useState("")
     
 
@@ -23,4 +23,4 @@ function Home({dataArr, setFavorites, favorites}) {
     )
 }
 
-export default Home
+export default PokeDex

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Route, Routes} from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar';
-import Home from './Home';
+import PokeDex from './PokeDex';
 import Race from './Race';
 import Battle from './Battle';
 import FavList from './FavList';
@@ -56,7 +56,7 @@ function App() {
         <Route path="/track" element={<Race dataArr={dataArr} favorites={favorites}/>}></Route>
         <Route path="/arena" element={<Battle dataArr={dataArr} favorites={favorites} />}></Route>
         <Route path='/favorites' element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}></Route>
-        <Route exact path="/" element={<Home dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}></Route>
+        <Route exact path="/" element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}></Route>
       </Routes>
     </div>
   } else {
