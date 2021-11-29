@@ -17,3 +17,7 @@ The Arena page contains the strength minigame. This minigame will use a series o
 # Favorties
 
 The Favorites page contians a display card for each Pokemon you have favorited along with a button to delete them from the favorites page.
+
+# Upcoming Plans
+
+I plan to deploy this app after creating another minigame or two using the other base-stats in some creative way. 
