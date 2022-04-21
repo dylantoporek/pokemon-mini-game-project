@@ -13,19 +13,17 @@ function App() {
   const [favorites, setFavorites] = useState([])
   
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=898&offset=0")
+    fetch("/api/v1/pokemons")
     .then(res => res.json())
-    .then(data => {
-      data.results.forEach((result) => {
-        fetchPokeData(result.url)
-      })
-    })
+    .then(data => setDataArr(data))
+    
+    
 
-    fetch("http://localhost:4000/fav")
-        .then(res => res.json())
-        .then((data) => {
-            setFavorites(data)
-        })
+    // fetch("http://localhost:4000/fav")
+    //     .then(res => res.json())
+    //     .then((data) => {
+    //         setFavorites(data)
+    //     })
   }, [])
   
   
@@ -53,10 +51,23 @@ function App() {
     return <div id='app'>
       <NavBar />
       <Routes>
-        <Route path="/track" element={<Race dataArr={dataArr} favorites={favorites}/>}></Route>
-        <Route path="/arena" element={<Battle dataArr={dataArr} favorites={favorites} />}></Route>
-        <Route path='/favorites' element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}></Route>
-        <Route exact path="/" element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}></Route>
+
+        {/* <Route path="/track" 
+          element={<Race dataArr={dataArr} favorites={favorites}/>}>
+        </Route>
+
+        <Route path="/arena" 
+          element={<Battle dataArr={dataArr} favorites={favorites} />}>
+        </Route>
+
+        <Route path='/favorites' 
+          element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}>
+        </Route> */}
+
+        <Route exact path="/" 
+          element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}>
+        </Route>
+        
       </Routes>
     </div>
   } else {

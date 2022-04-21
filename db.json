@@ -1,3 +1,9 @@
 {
-  "fav": []
+  "fav": [
+    {
+      "name": "ninetales",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+      "id": 2
+    }
+  ]
 }

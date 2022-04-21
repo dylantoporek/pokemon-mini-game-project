@@ -212,6 +212,27 @@
   text-align: center;
   font-size: 12px;
 }
+
+#pokemon-details-fixed{
+  position: fixed;
+  top: 25%;
+  left: 16.25%;
+  width: 67%;
+  height: 60%;
+  background-color: white;
+
+}
+
+#pokemon-details-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-radius: 5%;
+  border-width: 10px;
+  border-color: #ffcb05;
+}
 /*////////////////////////////////////////////////// RACE COMPONENT /////////////////////////////////////////////*/
 
 #race {
@@ -468,4 +489,11 @@
   height: 600px;
   width: 100%;
   overflow: auto;
+}
+
+#live{
+  position: absolute;
+  top: 200;
+  left: 400;
+
 }

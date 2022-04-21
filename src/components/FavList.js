@@ -20,7 +20,7 @@ function FavList({favorites, onDeleteItem}) {
 
     return (
         <div id='favorites-page-title-container'>
-           
+
            <div id='fav-title-display'>
                 <p id='fav-title'>
                     Favorites
@@ -29,7 +29,7 @@ function FavList({favorites, onDeleteItem}) {
                 
             <div id='fav-poke-display'>
                 {favDisplay()}
-            </div>
+            </div> 
            
         </div>
     )
