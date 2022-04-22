@@ -56,14 +56,15 @@ function Race({dataArr, favorites}) {
         if(!playerPoke[0] || !cpu1.name){
             return alert('There must be 5 pokemon to race.')
         }
-        const playerSpeed = playerPoke.speed
+        
+        const playerSpeed = playerPoke[0].speed
+        
         const opponentSpeedStats = opponents.map((cpu) => {
            return cpu.speed
         })
 
        const racerSpeeds = [playerSpeed, ...opponentSpeedStats]
         setAni(true)
-        // console.log(Math.max([...racerSpeeds])) COMING BACK AS NAN? GET working for proper racing
         setTimeout(function (){
             if(Math.max(...racerSpeeds) === playerSpeed){
                 alert('You won!')
