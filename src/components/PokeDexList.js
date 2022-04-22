@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import PokeDexItem from "./PokeDexItem";
 
-function PokeDexList({dataArr, filter, newFavorite}) {
-    const [togDetails, setTogDetails] = useState(false)
-    const [specificPoke, setSpecificPoke] = useState(null)
+function PokeDexList({dataArr, filter, newFavorite, specificPoke, setSpecificPoke, togDetails, setTogDetails}) {
 
     const pokeDisplay = () => {
         return pokeFilter().map((poke) => {

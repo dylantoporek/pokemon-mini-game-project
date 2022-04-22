@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function SignupForm({onLogin}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [bank, setBank] = useState(100)
     const [errors, setErrors] = useState([]);
     const [isShown, setIsShown] = useState(false)
+
+    const navigate = useNavigate()
 
 
   function handleSubmit(e) {
@@ -20,12 +22,14 @@ function SignupForm({onLogin}){
       body: JSON.stringify({
         username,
         password,
-        password_confirmation: passwordConfirmation,
-        bank
+        password_confirmation: passwordConfirmation
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => onLogin(user))
+        r.json().then((user) => {
+            onLogin(user)
+            navigate('/')
+        })
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

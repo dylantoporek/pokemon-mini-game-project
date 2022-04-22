@@ -25,13 +25,10 @@ function PokeDexItem({specificPoke, togDetails, setTogDetails, setSpecificPoke, 
         <img src={poke.image}/>
     </div>
 
-    const pokemonDetails = specificPoke ? <PokemonDetails setSpecificPoke={setSpecificPoke} poke={specificPoke} /> : null
+
     return (
         <div id='poke-item'>
             {pokemonDisplay}
-            <div>
-                {pokemonDetails}
-            </div>
         </div>
     )
 }
