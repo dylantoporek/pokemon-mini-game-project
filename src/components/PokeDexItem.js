@@ -2,14 +2,22 @@ import React, {useState} from "react";
 import PokemonDetails from "./PokemonDetails";
 
 
-function PokeDexItem({poke, newFavorite}) {
-    const [togDetails, setTogDetails] = useState(false)
-    const [specificPoke, setSpecificPoke] = useState(null)
+function PokeDexItem({specificPoke, togDetails, setTogDetails, setSpecificPoke, poke, newFavorite}) {
+    
 
     function handlePokeClick(){
-        setTogDetails(true)
-        setSpecificPoke(poke)
+
+        if (specificPoke) {
+            setTogDetails(false)
+            setSpecificPoke(null)
+        } else {
+            setTogDetails(true)
+            setSpecificPoke(poke)
+        }
+        
     }
+    
+
     const pokemonDisplay = 
     <div 
         onClick={handlePokeClick}>
@@ -17,7 +25,7 @@ function PokeDexItem({poke, newFavorite}) {
         <img src={poke.image}/>
     </div>
 
-    const pokemonDetails = specificPoke && togDetails ? <PokemonDetails setTogDetails={setTogDetails} poke={specificPoke} /> : null
+    const pokemonDetails = specificPoke ? <PokemonDetails setSpecificPoke={setSpecificPoke} poke={specificPoke} /> : null
     return (
         <div id='poke-item'>
             {pokemonDisplay}

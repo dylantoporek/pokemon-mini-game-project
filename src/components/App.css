@@ -108,6 +108,16 @@
   left: -10px;
 }
 
+#user-button{
+  position: relative;
+  top: -65px;
+  width: 80px;
+  height: 40px;
+  font-weight: 800;
+  border: none;
+  border-radius: 10%;
+}
+
 /*//////////////////////////////////////////////// HOME COMPONENT//////////////////////////////////////////// */
 
 #pokedex-search{

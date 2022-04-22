@@ -1,9 +1,9 @@
 import React from 'react'
 
-function PokemonDetails({poke, setTogDetails}){
+function PokemonDetails({poke, setSpecificPoke}){
     const details = 
     <div id='pokemon-details-container'>
-        <button onClick={() => setTogDetails(false)}>X</button>
+        <button onClick={() => setSpecificPoke(null)}>X</button>
         <p>{poke.name}</p>
         <img src={poke.image} />
         <div>
