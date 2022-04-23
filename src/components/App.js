@@ -93,15 +93,15 @@ function App() {
       <Routes>
 
         <Route path="/track" 
-          element={<Race dataArr={dataArr} favorites={favorites}/>}>
+          element={<Race user={user} dataArr={dataArr} favorites={favorites}/>}>
         </Route>
 
         <Route path="/arena" 
-          element={<Battle dataArr={dataArr} favorites={favorites} />}>
+          element={<Battle user={user} dataArr={dataArr} favorites={favorites} />}>
         </Route>
 
         <Route path='/favorites' 
-          element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}>
+          element={<FavList user={user} favorites={favorites} onDeleteItem={handleDeleteItem}  />}>
         </Route>
 
         <Route exact path="/login" 
@@ -109,7 +109,7 @@ function App() {
         </Route>
 
         <Route exact path="/" 
-          element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} addToFavorite={addToFavorite} />}>
+          element={<PokeDex user={user} dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} addToFavorite={addToFavorite} />}>
         </Route>
         
       </Routes>

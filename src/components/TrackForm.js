@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOpponent3, getOpponent4, favorites}) {
+function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOpponent3, getOpponent4, favorites, user}) {
     const[pokeName, setPokeName] = useState("")
 
     function handleSubmit(e){
@@ -28,15 +28,20 @@ function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOp
     }
 
     function randomFavPoke(){
-        if(favorites.length > 0){
-            let randomFav = favorites[Math.floor(Math.random() * (favorites.length))]
-            let findRandomFav = dataArr.filter((poke) => {
-                return poke.name === randomFav.pokemon.name
-            })
-            playerPokeSearch([findRandomFav[0]])
+        if (user !== 'guest'){
+            if(favorites.length > 0){
+                let randomFav = favorites[Math.floor(Math.random() * (favorites.length))]
+                let findRandomFav = dataArr.filter((poke) => {
+                    return poke.name === randomFav.pokemon.name
+                })
+                playerPokeSearch([findRandomFav[0]])
+            } else {
+                alert('You must have at least one favorite to use this button!')
+            } 
         } else {
-            alert('You must have at least one favorite to use this button!')
-        }  
+            alert('you must be logged in to use this feature')
+        }
+         
     }
 
     return (

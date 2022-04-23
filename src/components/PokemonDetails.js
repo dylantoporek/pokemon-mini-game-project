@@ -1,9 +1,15 @@
 import React from 'react'
 
-function PokemonDetails({poke, setSpecificPoke, addToFavorite}){
+function PokemonDetails({poke, setSpecificPoke, addToFavorite, user}){
    
 function handleAddToFavorites(){
-    addToFavorite(poke)
+    if (user !== 'guest'){
+        addToFavorite(poke)
+    }
+    if (user === 'guest'){
+        alert('you must be logged in to use this feature')
+    }
+    
 }
 
     const details = 

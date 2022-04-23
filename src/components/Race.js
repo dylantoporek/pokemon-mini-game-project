@@ -5,7 +5,7 @@ import track from '../images/track.png'
 
 
 
-function Race({dataArr, favorites}) {
+function Race({dataArr, favorites, user}) {
     const [ani, setAni] = useState(false)
     const [playerPoke, setPlayerPoke] = useState([])
     const [cpu1, setCpu1] = useState({})
@@ -84,6 +84,7 @@ function Race({dataArr, favorites}) {
     return (
         <div>
             <TrackForm
+                user={user}
                 dataArr={dataArr}
                 favorites={favorites}
                 playerPokeSearch={playerPokeSearch} 
