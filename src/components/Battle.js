@@ -81,10 +81,13 @@ function Battle({dataArr, favorites}) {
         if(!playerPoke[0] || !cpu[0]){
             return alert('There must be two pokemon to battle.')
         }
+        console.log(playerPoke[0])
+        console.log(cpu[0])
 
-        let playerType = playerPoke[0].types[0].type.name
+        let playerType = playerPoke[0].type_one
+        let playerType2 = playerPoke[0].type_two ? playerPoke[0].type_two : null
         let playerTypeArr = typeChart[`${playerType}`]
-        let cpuType =cpu[0].types[0].type.name
+        let cpuType = cpu[0].type_one
         let cpuTypeArr = typeChart[`${cpuType}`]
         let playerWins
         let cpuWins
@@ -106,8 +109,8 @@ function Battle({dataArr, favorites}) {
     function winnerByAttack(){
         let playerPokeName = playerPoke[0].name.toUpperCase()
         let cpuPokeName = cpu[0].name.toUpperCase()
-        let playerAtkAvg = (playerPoke[0].stats[1].base_stat + playerPoke[0].stats[3].base_stat)/2
-        let cpuAtkAvg = (cpu[0].stats[1].base_stat + cpu[0].stats[3].base_stat)/2
+        let playerAtkAvg = (playerPoke[0].attack + playerPoke[0].special_attack)/2
+        let cpuAtkAvg = (cpu[0].attack + cpu[0].special_attack)/2
 
         if(playerAtkAvg > cpuAtkAvg){
             alert(`You won! ${playerPokeName} is stronger than ${cpuPokeName}.`)

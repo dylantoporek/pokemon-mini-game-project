@@ -27,25 +27,53 @@ function App() {
       }
     });
     
-    
+    fetch("/api/v1/user_favorites").then((r) => {
+      if (r.ok) {
+        r.json().then((data) => setFavorites(data));
+      } else{
+        r.json().then((data) => console.log(data))
+      }
+    });
 
-    // fetch("http://localhost:4000/fav")
-    //     .then(res => res.json())
-    //     .then((data) => {
-    //         setFavorites(data)
-    //     })
+    
   }, [])
-  
+
+
+  function addToFavorite(obj){
+    console.log(obj)
+    let newFav = {pokemon_id: obj.id}
+    fetch('/api/v1/user_favorites', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({newFav}),
+      }).then((r) => {
+      if (r.ok) {
+        r.json().then((data)=> {
+          let newFavoritesArr = [...favorites, data]
+          setFavorites(newFavoritesArr)
+        })
+      } else {
+        r.json().catch((data) => console.log(data))
+      }
+    });
+  }
   
   function handleDeleteItem(deletedItem){
     const updatedFavs = favorites.filter((fav) => fav.id !== deletedItem.id);
     setFavorites(updatedFavs);
 
-    fetch(`http://localhost:4000/fav/${deletedItem.id}`, {
+    fetch(`/api/v1/user_favorites/${deletedItem.id}`, {
       method: 'DELETE',
     })
-    .then((res) => res.json())
-    .then(console.log('Item Deleted'))
+    .then((res) => {
+      if (res.ok) {
+        console.log("file deleted")
+      } else {
+        res.json().then((data)=> console.log(data))
+      }
+    })
   }
 
   
@@ -57,6 +85,8 @@ function App() {
     })
   }
 
+  console.log(favorites)
+
   if (dataArr.length > 300){
     return <div id='app'>
       <NavBar user={user} setUser={setUser} />
@@ -66,20 +96,20 @@ function App() {
           element={<Race dataArr={dataArr} favorites={favorites}/>}>
         </Route>
 
-        {/* <Route path="/arena" 
+        <Route path="/arena" 
           element={<Battle dataArr={dataArr} favorites={favorites} />}>
         </Route>
 
         <Route path='/favorites' 
           element={<FavList favorites={favorites} onDeleteItem={handleDeleteItem}  />}>
-        </Route> */}
+        </Route>
 
         <Route exact path="/login" 
           element={<Login onLogin={setUser}/>}>
         </Route>
 
         <Route exact path="/" 
-          element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} />}>
+          element={<PokeDex dataArr={dataArr} setFavorites={setFavorites} favorites={favorites} addToFavorite={addToFavorite} />}>
         </Route>
         
       </Routes>

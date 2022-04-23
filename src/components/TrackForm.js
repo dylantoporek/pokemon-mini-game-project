@@ -31,7 +31,7 @@ function TrackForm({playerPokeSearch, dataArr, getOpponent1, getOpponent2, getOp
         if(favorites.length > 0){
             let randomFav = favorites[Math.floor(Math.random() * (favorites.length))]
             let findRandomFav = dataArr.filter((poke) => {
-                return poke.name === randomFav.name
+                return poke.name === randomFav.pokemon.name
             })
             playerPokeSearch([findRandomFav[0]])
         } else {

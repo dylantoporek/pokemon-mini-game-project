@@ -4,13 +4,14 @@ import React from "react";
 function FavList({favorites, onDeleteItem}) {
 
     const favDisplay = () => favorites.map((fav) => {
+        console.log(fav)
         return <div id='fav-container' key={fav.id}>
 
             <p id='fav-name'>
-                {fav.name}
+                {fav.pokemon.name}
             </p>
 
-            <img id='poke-fav-img' src={fav.img} />
+            <img id='poke-fav-img' src={fav.pokemon.image} />
 
             <div id='img-base'></div>
 

@@ -1,11 +1,16 @@
 import React from 'react'
 
-function PokemonDetails({poke, setSpecificPoke}){
+function PokemonDetails({poke, setSpecificPoke, addToFavorite}){
+   
+function handleAddToFavorites(){
+    addToFavorite(poke)
+}
+
     const details = 
     <div id='pokemon-details-container'>
         <button onClick={() => setSpecificPoke(null)}>X</button>
         <p>{poke.name}</p>
-        <img src={poke.image} />
+        <img src={poke.official_image} />
         <div>
             Stats:
             <p>HP: {poke.hp}</p>
@@ -15,6 +20,7 @@ function PokemonDetails({poke, setSpecificPoke}){
             <p>Special Defense: {poke.special_defense}</p>
             <p>Speed: {poke.speed}</p>
         </div>
+        <button onClick={handleAddToFavorites}>Add to Fav</button>
     </div>
     return (
         <div id='pokemon-details-fixed'>
