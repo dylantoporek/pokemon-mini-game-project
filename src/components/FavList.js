@@ -1,10 +1,9 @@
 import React from "react";
 
 
-function FavList({favorites, onDeleteItem}) {
+function FavList({favorites, onDeleteItem, user}) {
 
     const favDisplay = () => favorites.map((fav) => {
-        console.log(fav)
         return <div id='fav-container' key={fav.id}>
 
             <p id='fav-name'>
@@ -29,7 +28,7 @@ function FavList({favorites, onDeleteItem}) {
             </div>
                 
             <div id='fav-poke-display'>
-                {favDisplay()}
+                {user === 'guest' ? 'You must have an account to use this feature.' : favDisplay()}
             </div> 
            
         </div>

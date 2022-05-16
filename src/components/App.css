@@ -226,22 +226,78 @@
 #pokemon-details-fixed{
   position: fixed;
   top: 25%;
-  left: 16.25%;
-  width: 67%;
-  height: 60%;
-  background-color: white;
-
+  left: 15%;
+  width: 68%;
 }
 
 #pokemon-details-container{
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-style: solid;
   border-radius: 5%;
   border-width: 10px;
   border-color: #ffcb05;
+  top: -45px;
+  background-color: white;
+}
+
+#close-details{
+  position: relative;
+  align-self: flex-end;
+  top: 15px;
+  right: 15px;
+}
+
+#pokemon-details-name{
+  position: relative;
+  font-size: larger;
+  top: 0px;
+}
+
+#side-by-side-details{
+  display: flex;
+  flex-direction: row;
+  margin: 3%;
+  width: 100%;
+
+}
+
+#official-img{
+  position: relative;
+  height: 40%;
+  min-height: 150px;
+  width: 40%;
+  min-width: 150px;
+  top: -20px;
+  margin-right: 20%;
+  margin-left: 5%;
+
+}
+
+#pokemon-stats-container{
+position: relative;
+display: flex;
+flex-direction: column;
+font-size: 12px;
+top: 0px;
+font-weight: bold;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+height: 250px;
+width: 150px;
+min-width: 100px;
+align-items: center;
+justify-content: center;
+right: 5%;
+}
+
+#add-to-fav{
+  position: relative;
+  top: -15px;
 }
 /*////////////////////////////////////////////////// RACE COMPONENT /////////////////////////////////////////////*/
 

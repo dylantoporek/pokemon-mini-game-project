@@ -14,11 +14,11 @@ function handleAddToFavorites(){
 
     const details = 
     <div id='pokemon-details-container'>
-        <button onClick={() => setSpecificPoke(null)}>X</button>
-        <p>{poke.name}</p>
-        <img src={poke.official_image} />
-        <div>
-            Stats:
+        <button id='close-details' onClick={() => setSpecificPoke(null)}>X</button>
+        <p id='pokemon-details-name'>{poke.name.toUpperCase()}</p>
+        <div id='side-by-side-details'>
+        <img id='official-img' src={poke.official_image} />
+        <div id='pokemon-stats-container'>
             <p>HP: {poke.hp}</p>
             <p>Attack: {poke.attack}</p>
             <p>Defense: {poke.defense}</p>
@@ -26,7 +26,9 @@ function handleAddToFavorites(){
             <p>Special Defense: {poke.special_defense}</p>
             <p>Speed: {poke.speed}</p>
         </div>
-        <button onClick={handleAddToFavorites}>Add to Fav</button>
+        </div>
+        
+        <button id='add-to-fav' onClick={handleAddToFavorites}>Add to Fav</button>
     </div>
     return (
         <div id='pokemon-details-fixed'>
