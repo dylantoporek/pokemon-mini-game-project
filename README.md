@@ -20,4 +20,4 @@ The Favorites page contians a display card for each Pokemon you have favorited a
 
 # Upcoming Plans
 
-I plan to deploy this app after creating another minigame or two using the other base-stats in some creative way. 
+I plan to restyle this entire app using SCSS and bootstrap. Focusing mainly on improving UX and UI experience and layout.
