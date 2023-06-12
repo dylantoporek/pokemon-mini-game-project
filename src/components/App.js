@@ -15,13 +15,13 @@ function App() {
   const [user, setUser] = useState('guest')
 
   useEffect(() => {
-    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/pokemons", {
+    fetch("https://tranquil-scrubland-82540.herokuapp.com/api/v1/pokemons", {
       mode: 'no-cors',
     })
     .then(res => res.json())
     .then(data => setDataArr(data))
 
-    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/me", {
+    fetch("https://tranquil-scrubland-82540.herokuapp.com/api/v1/me", {
       mode: 'no-cors',
     }).then((r) => {
       if (r.ok) {
@@ -31,7 +31,7 @@ function App() {
       }
     });
     
-    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/user_favorites", {
+    fetch("https://tranquil-scrubland-82540.herokuapp.com/api/v1/user_favorites", {
       mode: 'no-cors',
     }).then((r) => {
       if (r.ok) {
