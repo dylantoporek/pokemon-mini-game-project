@@ -15,11 +15,11 @@ function App() {
   const [user, setUser] = useState('guest')
 
   useEffect(() => {
-    fetch("/api/v1/pokemons")
+    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/pokemons")
     .then(res => res.json())
     .then(data => setDataArr(data))
 
-    fetch("/api/v1/me").then((r) => {
+    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       } else{
@@ -27,7 +27,7 @@ function App() {
       }
     });
     
-    fetch("/api/v1/user_favorites").then((r) => {
+    fetch("https://git.heroku.com/tranquil-scrubland-82540.git/api/v1/user_favorites").then((r) => {
       if (r.ok) {
         r.json().then((data) => setFavorites(data));
       } else{
